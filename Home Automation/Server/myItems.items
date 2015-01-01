@@ -1,0 +1,7 @@
+Group All
+Group gGF 		(All)
+
+Group GF_growingStation "Growing Station"		<garden>		(gGF)
+String Arduino 			"ArduGarden [%s]" 						(arduino) 	{serial="COM3"} //use serial binding
+String Humidity			"Humidity [s%]"			<temperature>	(GF_growingStation)
+Contact Relay			"Garden ON/OFF"			<power>			(GF_growingStation)

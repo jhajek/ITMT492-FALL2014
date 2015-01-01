@@ -1,0 +1,1 @@
+All the code in this zip is public domain and can be used by anyone.

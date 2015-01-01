@@ -1,0 +1,15 @@
+rule ArduGarden
+	// The code here pushs string updates to the openHab server,  but for some reason it wouldn't display in the sitemap. 
+	when 
+		Item Arduino received update
+
+	then
+		var String ArduinoUpdate = Arduino.state.toString.trim
+		println("ArduinoUpdate -> " + ArduinoUpdate)
+		
+		var int humidityStartsOn = ArduinoUpdate.indexOf("Humidity:") + "Humidity:".length  
+      	var String humidity = ArduinoUpdate.mid(humidityStartsOn, ArduinoUpdate.indexOf('%;')-humidityStartsOn)  
+  
+      Humidity.postUpdate(humidity)
+		
+end
